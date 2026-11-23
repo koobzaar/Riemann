@@ -1,0 +1,186 @@
+{
+  "graph_version": "sample-1.0",
+  "augments": {
+    "it_is_critical": {
+      "canonical_id": "it_is_critical",
+      "mechanic_tags": [
+        "grants_crit_chance"
+      ],
+      "crit_chance": 0.5
+    },
+    "jeweled_gauntlet": {
+      "canonical_id": "jeweled_gauntlet",
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "scales_with_crit"
+      ],
+      "crit_chance": 0.25
+    },
+    "ethereal_weapon": {
+      "canonical_id": "ethereal_weapon",
+      "mechanic_tags": [
+        "applies_on_hit_on_spell"
+      ]
+    },
+    "apex_inventor": {
+      "canonical_id": "apex_inventor",
+      "mechanic_tags": [
+        "grants_item_haste"
+      ],
+      "item_haste": 100.0
+    },
+    "weapon_of_destiny": {
+      "canonical_id": "weapon_of_destiny",
+      "mechanic_tags": [
+        "empowers_first_legendary"
+      ]
+    },
+    "neutral_aug": {
+      "canonical_id": "neutral_aug",
+      "mechanic_tags": []
+    }
+  },
+  "items": {
+    "heartsteel": {
+      "canonical_id": "heartsteel",
+      "is_legendary": true,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 10.0,
+      "cooldown_leverage_weight": 0.24,
+      "stat_scaling_tier": 1.0,
+      "mechanic_tags": [
+        "hp_stacking",
+        "has_item_cooldown"
+      ]
+    },
+    "warmogs_armor": {
+      "canonical_id": "warmogs_armor",
+      "is_legendary": true,
+      "has_item_cooldown": false,
+      "stat_scaling_tier": 0.75,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "thornmail": {
+      "canonical_id": "thornmail",
+      "is_legendary": true,
+      "has_item_cooldown": false,
+      "stat_scaling_tier": 0.25,
+      "mechanic_tags": [
+        "tank_defense"
+      ]
+    },
+    "overlords_bloodmail": {
+      "canonical_id": "overlords_bloodmail",
+      "is_legendary": true,
+      "stat_scaling_tier": 0.85,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "rabadons_deathcap": {
+      "canonical_id": "rabadons_deathcap",
+      "is_legendary": true,
+      "stat_scaling_tier": 1.0,
+      "mechanic_tags": [
+        "ap_scaling"
+      ]
+    },
+    "winters_approach": {
+      "canonical_id": "winters_approach",
+      "is_legendary": true,
+      "stat_scaling_tier": 0.65,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "fimbulwinter": {
+      "canonical_id": "fimbulwinter",
+      "is_legendary": true,
+      "transformed_from": "winters_approach",
+      "has_item_cooldown": true,
+      "base_cooldown_s": 8.0,
+      "cooldown_leverage_weight": 0.22,
+      "stat_scaling_tier": 0.85,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "unending_despair": {
+      "canonical_id": "unending_despair",
+      "is_legendary": true,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 5.0,
+      "cooldown_leverage_weight": 0.22,
+      "stat_scaling_tier": 0.8,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "giants_belt": {
+      "canonical_id": "giants_belt",
+      "is_legendary": false,
+      "is_unique": false,
+      "stat_scaling_tier": 0.0,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    }
+  },
+  "champions": {
+    "jinx": {
+      "canonical_id": "jinx",
+      "mechanic_tags": [
+        "marksman"
+      ]
+    },
+    "senna": {
+      "canonical_id": "senna",
+      "mechanic_tags": [
+        "marksman",
+        "crit_overflow_converter"
+      ],
+      "converter_specs": [
+        {
+          "stat_name": "lifesteal_fraction",
+          "units_per_crit_fraction": 0.35
+        }
+      ]
+    },
+    "dr_mundo": {
+      "canonical_id": "dr_mundo",
+      "mechanic_tags": [
+        "tank",
+        "hp_stacking"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "edge_id": "crit_synergy",
+      "edge_type": "augment_pair_synergy",
+      "source_tag": "grants_crit_chance",
+      "target_tag": "scales_with_crit",
+      "weight": 0.2,
+      "symmetric": true,
+      "reason": "Crit chance scales with crit augment"
+    },
+    {
+      "edge_id": "wod_heartsteel_bloodmail",
+      "edge_type": "amplifies_locked_legendary",
+      "source_entity_id": "overlords_bloodmail",
+      "target_entity_id": "heartsteel",
+      "weight": 0.12,
+      "reason": "Amplifies locked Heartsteel"
+    },
+    {
+      "edge_id": "wod_fimbulwinter_unending",
+      "edge_type": "amplifies_locked_legendary",
+      "source_entity_id": "unending_despair",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.12,
+      "reason": "Amplifies locked Fimbulwinter"
+    }
+  ]
+}

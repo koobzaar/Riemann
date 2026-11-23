@@ -1,0 +1,338 @@
+{
+  "patch": "26.22",
+  "patch_calendar": [
+    "26.22",
+    "26.21",
+    "26.20"
+  ],
+  "mode_rework_patches": {
+    "aram_mayhem": null,
+    "arena": null
+  },
+  "augments": [
+    {
+      "id": 1001,
+      "apiName": "Augment_ApexInventor",
+      "nameTRA": "Apex Inventor",
+      "canonical_id": "apex_inventor",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "gold",
+      "desc": "Grants 100 Item Haste."
+    },
+    {
+      "id": 1002,
+      "apiName": "Augment_WeaponOfDestiny",
+      "nameTRA": "Weapon of Destiny",
+      "canonical_id": "weapon_of_destiny",
+      "modes": [
+        "aram_mayhem"
+      ],
+      "rarity": "gold",
+      "desc": "Your first Legendary item becomes the Weapon of Destiny."
+    },
+    {
+      "id": 1003,
+      "apiName": "Augment_JeweledGauntlet",
+      "nameTRA": "Jeweled Gauntlet",
+      "canonical_id": "jeweled_gauntlet",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "prismatic",
+      "desc": "Your abilities can critically strike. Grants 25% Critical Strike Chance."
+    },
+    {
+      "id": 1004,
+      "apiName": "Augment_ItIsCritical",
+      "nameTRA": "It's Critical",
+      "canonical_id": "it_is_critical",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "gold",
+      "desc": "Grants 50% Critical Strike Chance."
+    },
+    {
+      "id": 1005,
+      "apiName": "Augment_EtherealWeapon",
+      "nameTRA": "Ethereal Weapon",
+      "canonical_id": "ethereal_weapon",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "prismatic",
+      "desc": "Your abilities apply on-hit effects."
+    },
+    {
+      "id": 1006,
+      "apiName": "Augment_TapDancer",
+      "nameTRA": "Tap Dancer",
+      "canonical_id": "tap_dancer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "prismatic",
+      "desc": "Gain attack speed and movement speed on-hit."
+    },
+    {
+      "id": 1007,
+      "apiName": "Augment_ArenaOnly",
+      "nameTRA": "Arena Exclusive",
+      "canonical_id": "arena_only_aug",
+      "modes": [
+        "arena"
+      ],
+      "rarity": "silver",
+      "desc": "Arena only test augment."
+    },
+    {
+      "id": 1008,
+      "apiName": "Augment_CriticalStrikes",
+      "nameTRA": "Critical Strikes",
+      "canonical_id": "critical_strikes",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "silver",
+      "desc": "Critical strikes deal bonus damage."
+    },
+    {
+      "id": 1009,
+      "apiName": "Augment_CriticalShield",
+      "nameTRA": "Critical Shield",
+      "canonical_id": "critical_shield",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "silver",
+      "desc": "Shields can critically strike."
+    },
+    {
+      "id": 1010,
+      "apiName": "Augment_Neutral",
+      "nameTRA": "Neutral Augment",
+      "canonical_id": "neutral_aug",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "rarity": "silver",
+      "desc": "Modest adaptive stats."
+    }
+  ],
+  "items": [
+    {
+      "id": 3084,
+      "name": "Heartsteel",
+      "canonical_id": "heartsteel",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 10.0,
+      "cooldown_leverage_weight": 0.24,
+      "stat_scaling_tier": 1.0
+    },
+    {
+      "id": 3083,
+      "name": "Warmog's Armor",
+      "canonical_id": "warmogs_armor",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "has_item_cooldown": false,
+      "stat_scaling_tier": 0.75
+    },
+    {
+      "id": 3075,
+      "name": "Thornmail",
+      "canonical_id": "thornmail",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "has_item_cooldown": false,
+      "stat_scaling_tier": 0.25
+    },
+    {
+      "id": 2501,
+      "name": "Overlord's Bloodmail",
+      "canonical_id": "overlords_bloodmail",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "stat_scaling_tier": 0.85
+    },
+    {
+      "id": 3089,
+      "name": "Rabadon's Deathcap",
+      "canonical_id": "rabadons_deathcap",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "stat_scaling_tier": 1.0
+    },
+    {
+      "id": 3119,
+      "name": "Winter's Approach",
+      "canonical_id": "winters_approach",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "stat_scaling_tier": 0.65
+    },
+    {
+      "id": 3121,
+      "name": "Fimbulwinter",
+      "canonical_id": "fimbulwinter",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "transformed_from": "winters_approach",
+      "has_item_cooldown": true,
+      "base_cooldown_s": 8.0,
+      "cooldown_leverage_weight": 0.22,
+      "stat_scaling_tier": 0.85
+    },
+    {
+      "id": 2502,
+      "name": "Unending Despair",
+      "canonical_id": "unending_despair",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 5.0,
+      "cooldown_leverage_weight": 0.22,
+      "stat_scaling_tier": 0.8
+    },
+    {
+      "id": 3031,
+      "name": "Infinity Edge",
+      "canonical_id": "infinity_edge",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.95
+    },
+    {
+      "id": 3046,
+      "name": "Phantom Dancer",
+      "canonical_id": "phantom_dancer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.75
+    },
+    {
+      "id": 3036,
+      "name": "Lord Dominik's Regards",
+      "canonical_id": "lord_dominiks_regards",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "unique_group": "last_whisper",
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.85
+    },
+    {
+      "id": 3033,
+      "name": "Mortal Reminder",
+      "canonical_id": "mortal_reminder",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "unique_group": "last_whisper",
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.8
+    },
+    {
+      "id": 1011,
+      "name": "Giant's Belt",
+      "canonical_id": "giants_belt",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": false,
+      "is_unique": false,
+      "stat_scaling_tier": 0.0
+    },
+    {
+      "id": 9901,
+      "name": "Arena Prismatic Hammer",
+      "canonical_id": "arena_only_item",
+      "modes": [
+        "arena"
+      ],
+      "is_legendary": true,
+      "stat_scaling_tier": 0.9
+    }
+  ],
+  "champions": [
+    {
+      "id": 222,
+      "name": "Jinx",
+      "alias": "Jinx",
+      "canonical_id": "jinx",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ]
+    },
+    {
+      "id": 235,
+      "name": "Senna",
+      "alias": "Senna",
+      "canonical_id": "senna",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Dr. Mundo",
+      "alias": "DrMundo",
+      "canonical_id": "dr_mundo",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ]
+    }
+  ]
+}

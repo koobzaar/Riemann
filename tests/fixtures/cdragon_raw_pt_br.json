@@ -1,0 +1,127 @@
+{
+  "patch": "26.22",
+  "augments": [
+    {
+      "id": 1001,
+      "apiName": "Augment_ApexInventor",
+      "nameTRA": "Inventor \u00c1pice"
+    },
+    {
+      "id": 1002,
+      "apiName": "Augment_WeaponOfDestiny",
+      "nameTRA": "Arma do Destino"
+    },
+    {
+      "id": 1003,
+      "apiName": "Augment_JeweledGauntlet",
+      "nameTRA": "Manopla Adornada"
+    },
+    {
+      "id": 1004,
+      "apiName": "Augment_ItIsCritical",
+      "nameTRA": "\u00c9 Cr\u00edtico"
+    },
+    {
+      "id": 1005,
+      "apiName": "Augment_EtherealWeapon",
+      "nameTRA": "Arma Et\u00e9rea"
+    },
+    {
+      "id": 1006,
+      "apiName": "Augment_TapDancer",
+      "nameTRA": "Sapateado"
+    },
+    {
+      "id": 1007,
+      "apiName": "Augment_ArenaOnly",
+      "nameTRA": "Exclusivo da Arena"
+    },
+    {
+      "id": 1008,
+      "apiName": "Augment_CriticalStrikes",
+      "nameTRA": "Golpes Cr\u00edticos"
+    },
+    {
+      "id": 1009,
+      "apiName": "Augment_CriticalShield",
+      "nameTRA": "Escudo Cr\u00edtico"
+    },
+    {
+      "id": 1010,
+      "apiName": "Augment_Neutral",
+      "nameTRA": "Aprimoramento Neutro"
+    }
+  ],
+  "items": [
+    {
+      "id": 3084,
+      "name": "Cora\u00e7\u00e3o de A\u00e7o"
+    },
+    {
+      "id": 3083,
+      "name": "Armadura de Warmog"
+    },
+    {
+      "id": 3075,
+      "name": "Armadura de Espinhos"
+    },
+    {
+      "id": 2501,
+      "name": "Cota de Sangue do Suserano"
+    },
+    {
+      "id": 3089,
+      "name": "Capuz da Morte de Rabadon"
+    },
+    {
+      "id": 3119,
+      "name": "Aproxima\u00e7\u00e3o Invernal"
+    },
+    {
+      "id": 3121,
+      "name": "Fimbulwinter"
+    },
+    {
+      "id": 2502,
+      "name": "Desespero Eterno"
+    },
+    {
+      "id": 3031,
+      "name": "Gume do Infinito"
+    },
+    {
+      "id": 3046,
+      "name": "Dan\u00e7arina Fantasma"
+    },
+    {
+      "id": 3036,
+      "name": "Lembran\u00e7as do Lorde Dominik"
+    },
+    {
+      "id": 3033,
+      "name": "Lembrete Mortal"
+    },
+    {
+      "id": 1011,
+      "name": "Cinto do Gigante"
+    },
+    {
+      "id": 9901,
+      "name": "Martelo Prism\u00e1tico da Arena"
+    }
+  ],
+  "champions": [
+    {
+      "id": 222,
+      "name": "Jinx"
+    },
+    {
+      "id": 235,
+      "name": "Senna"
+    },
+    {
+      "id": 36,
+      "name": "Dr. Mundo"
+    }
+  ]
+}

@@ -1,0 +1,3351 @@
+{
+  "graph_version": "1.0.0",
+  "augments": {
+    "it_is_critical": {
+      "canonical_id": "it_is_critical",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_crit_chance"
+      ],
+      "crit_chance": 0.5
+    },
+    "jeweled_gauntlet": {
+      "canonical_id": "jeweled_gauntlet",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "scales_with_crit"
+      ],
+      "crit_chance": 0.25
+    },
+    "vulnerability": {
+      "canonical_id": "vulnerability",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "scales_with_crit",
+        "burn_dot"
+      ],
+      "crit_chance": 0.25
+    },
+    "critical_healing": {
+      "canonical_id": "critical_healing",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "scales_with_crit",
+        "heal_shield"
+      ],
+      "crit_chance": 0.25
+    },
+    "critical_defense": {
+      "canonical_id": "critical_defense",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "scales_with_crit",
+        "hp_stacking"
+      ],
+      "crit_chance": 0.25
+    },
+    "soul_siphon": {
+      "canonical_id": "soul_siphon",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "scales_with_crit"
+      ],
+      "crit_chance": 0.25
+    },
+    "shadow_runner_crit": {
+      "canonical_id": "shadow_runner_crit",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_crit_chance"
+      ],
+      "crit_chance": 0.25
+    },
+    "overflow_crit_blade": {
+      "canonical_id": "overflow_crit_blade",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "crit_overflow_converter",
+        "grants_crit_chance"
+      ],
+      "crit_chance": 0.25,
+      "converter_specs": [
+        {
+          "stat_name": "lifesteal_fraction",
+          "units_per_crit_fraction": 0.35
+        }
+      ]
+    },
+    "ethereal_weapon": {
+      "canonical_id": "ethereal_weapon",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "applies_on_hit_on_spell",
+        "grants_on_hit"
+      ]
+    },
+    "tap_dancer": {
+      "canonical_id": "tap_dancer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "dual_wield": {
+      "canonical_id": "dual_wield",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "typhoon": {
+      "canonical_id": "typhoon",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "mystic_punch": {
+      "canonical_id": "mystic_punch",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_on_hit",
+        "ability_haste"
+      ]
+    },
+    "twice_thrice": {
+      "canonical_id": "twice_thrice",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "fan_the_hammer": {
+      "canonical_id": "fan_the_hammer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "scoped_weapons": {
+      "canonical_id": "scoped_weapons",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "attack_speed",
+        "grants_on_hit"
+      ]
+    },
+    "scope_ier_weapons": {
+      "canonical_id": "scope_ier_weapons",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "attack_speed",
+        "grants_on_hit"
+      ]
+    },
+    "symphony_of_war": {
+      "canonical_id": "symphony_of_war",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "attack_speed",
+        "grants_on_hit"
+      ]
+    },
+    "master_of_duality": {
+      "canonical_id": "master_of_duality",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "attack_speed",
+        "ability_haste"
+      ]
+    },
+    "light_em_up": {
+      "canonical_id": "light_em_up",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_on_hit",
+        "burn_dot"
+      ]
+    },
+    "apex_inventor": {
+      "canonical_id": "apex_inventor",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "grants_item_haste"
+      ],
+      "item_haste": 100.0
+    },
+    "weapon_of_destiny": {
+      "canonical_id": "weapon_of_destiny",
+      "modes": [
+        "aram_mayhem"
+      ],
+      "mechanic_tags": [
+        "empowers_first_legendary"
+      ]
+    },
+    "quest_steel_your_heart": {
+      "canonical_id": "quest_steel_your_heart",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "hp_stacking",
+        "item_quest"
+      ]
+    },
+    "quest_wooglets_witchcap": {
+      "canonical_id": "quest_wooglets_witchcap",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ap_scaling",
+        "item_quest"
+      ]
+    },
+    "infernal_conduit": {
+      "canonical_id": "infernal_conduit",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "burn_dot",
+        "ability_haste"
+      ]
+    },
+    "firebrand": {
+      "canonical_id": "firebrand",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "burn_dot",
+        "grants_on_hit"
+      ]
+    },
+    "magic_missile": {
+      "canonical_id": "magic_missile",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "burn_dot",
+        "ap_scaling"
+      ]
+    },
+    "phenomenal_evil": {
+      "canonical_id": "phenomenal_evil",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ap_scaling",
+        "ability_haste"
+      ]
+    },
+    "witchful_thinking": {
+      "canonical_id": "witchful_thinking",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ap_scaling"
+      ]
+    },
+    "eureka": {
+      "canonical_id": "eureka",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ap_scaling",
+        "ability_haste"
+      ]
+    },
+    "first_aid_kit": {
+      "canonical_id": "first_aid_kit",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "heal_shield"
+      ]
+    },
+    "holy_fire": {
+      "canonical_id": "holy_fire",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "heal_shield",
+        "burn_dot"
+      ]
+    },
+    "all_for_you": {
+      "canonical_id": "all_for_you",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "heal_shield"
+      ]
+    },
+    "circle_of_death": {
+      "canonical_id": "circle_of_death",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "heal_shield",
+        "ap_scaling"
+      ]
+    },
+    "windspeakers_blessing": {
+      "canonical_id": "windspeakers_blessing",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "heal_shield"
+      ]
+    },
+    "rabblemousing": {
+      "canonical_id": "rabblemousing",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "heal_shield",
+        "ability_haste"
+      ]
+    },
+    "accelerating_sorcery": {
+      "canonical_id": "accelerating_sorcery",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ability_haste",
+        "ap_scaling"
+      ]
+    },
+    "recursion": {
+      "canonical_id": "recursion",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ability_haste"
+      ]
+    },
+    "bread_and_butter": {
+      "canonical_id": "bread_and_butter",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ability_haste"
+      ]
+    },
+    "bread_and_jam": {
+      "canonical_id": "bread_and_jam",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ability_haste"
+      ]
+    },
+    "bread_and_cheese": {
+      "canonical_id": "bread_and_cheese",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "ability_haste"
+      ]
+    },
+    "goliath": {
+      "canonical_id": "goliath",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "tank_it_or_leave_it": {
+      "canonical_id": "tank_it_or_leave_it",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "hp_stacking",
+        "scales_with_crit"
+      ]
+    },
+    "celestial_body": {
+      "canonical_id": "celestial_body",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "courage_of_the_colossus": {
+      "canonical_id": "courage_of_the_colossus",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "mechanic_tags": [
+        "hp_stacking",
+        "heal_shield"
+      ]
+    }
+  },
+  "items": {
+    "heartsteel": {
+      "canonical_id": "heartsteel",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 10.0,
+      "cooldown_leverage_weight": 0.24,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 1.0,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "has_item_cooldown"
+      ]
+    },
+    "unending_despair": {
+      "canonical_id": "unending_despair",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 5.0,
+      "cooldown_leverage_weight": 0.22,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "has_item_cooldown"
+      ]
+    },
+    "overlords_bloodmail": {
+      "canonical_id": "overlords_bloodmail",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "ad_scaling"
+      ]
+    },
+    "warmogs_armor": {
+      "canonical_id": "warmogs_armor",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    "thornmail": {
+      "canonical_id": "thornmail",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.25,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "tank_defense"
+      ]
+    },
+    "jaksho_the_protean": {
+      "canonical_id": "jaksho_the_protean",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "tank_defense"
+      ]
+    },
+    "titanic_hydra": {
+      "canonical_id": "titanic_hydra",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 10.0,
+      "cooldown_leverage_weight": 0.16,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "grants_on_hit",
+        "has_item_cooldown"
+      ]
+    },
+    "sundered_sky": {
+      "canonical_id": "sundered_sky",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 6.0,
+      "cooldown_leverage_weight": 0.22,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ad_scaling",
+        "has_item_cooldown"
+      ]
+    },
+    "eclipse": {
+      "canonical_id": "eclipse",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 6.0,
+      "cooldown_leverage_weight": 0.22,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ad_scaling",
+        "has_item_cooldown"
+      ]
+    },
+    "steraks_gage": {
+      "canonical_id": "steraks_gage",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 60.0,
+      "cooldown_leverage_weight": 0.16,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "has_item_cooldown"
+      ]
+    },
+    "winters_approach": {
+      "canonical_id": "winters_approach",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.65,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "tear_item"
+      ]
+    },
+    "fimbulwinter": {
+      "canonical_id": "fimbulwinter",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 8.0,
+      "cooldown_leverage_weight": 0.22,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": "winters_approach",
+      "mechanic_tags": [
+        "hp_stacking",
+        "heal_shield",
+        "has_item_cooldown"
+      ]
+    },
+    "rabadons_deathcap": {
+      "canonical_id": "rabadons_deathcap",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 1.0,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling"
+      ]
+    },
+    "zhonyas_hourglass": {
+      "canonical_id": "zhonyas_hourglass",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 120.0,
+      "cooldown_leverage_weight": 0.18,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.7,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "has_item_cooldown"
+      ]
+    },
+    "lich_bane": {
+      "canonical_id": "lich_bane",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 1.5,
+      "cooldown_leverage_weight": 0.2,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "grants_on_hit",
+        "has_item_cooldown"
+      ]
+    },
+    "ludens_companion": {
+      "canonical_id": "ludens_companion",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 12.0,
+      "cooldown_leverage_weight": 0.18,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "has_item_cooldown"
+      ]
+    },
+    "liandrys_torment": {
+      "canonical_id": "liandrys_torment",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.9,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "burn_dot",
+        "hp_stacking"
+      ]
+    },
+    "blackfire_torch": {
+      "canonical_id": "blackfire_torch",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "burn_dot",
+        "ability_haste"
+      ]
+    },
+    "riftmaker": {
+      "canonical_id": "riftmaker",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.9,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "hp_stacking"
+      ]
+    },
+    "shadowflame": {
+      "canonical_id": "shadowflame",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "scales_with_crit"
+      ]
+    },
+    "void_staff": {
+      "canonical_id": "void_staff",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling"
+      ]
+    },
+    "cryptbloom": {
+      "canonical_id": "cryptbloom",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 60.0,
+      "cooldown_leverage_weight": 0.14,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "heal_shield",
+        "has_item_cooldown"
+      ]
+    },
+    "malignance": {
+      "canonical_id": "malignance",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "ability_haste"
+      ]
+    },
+    "cosmic_drive": {
+      "canonical_id": "cosmic_drive",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "ability_haste"
+      ]
+    },
+    "nashors_tooth": {
+      "canonical_id": "nashors_tooth",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "ap_scaling",
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "infinity_edge": {
+      "canonical_id": "infinity_edge",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.95,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "scales_with_crit",
+        "ad_scaling"
+      ]
+    },
+    "phantom_dancer": {
+      "canonical_id": "phantom_dancer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "attack_speed"
+      ]
+    },
+    "rapid_firecannon": {
+      "canonical_id": "rapid_firecannon",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.7,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "attack_speed"
+      ]
+    },
+    "runaans_hurricane": {
+      "canonical_id": "runaans_hurricane",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "navori_flickerblade": {
+      "canonical_id": "navori_flickerblade",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "ability_haste",
+        "attack_speed"
+      ]
+    },
+    "lord_dominiks_regards": {
+      "canonical_id": "lord_dominiks_regards",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": "last_whisper",
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "ad_scaling"
+      ]
+    },
+    "mortal_reminder": {
+      "canonical_id": "mortal_reminder",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": "last_whisper",
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "ad_scaling"
+      ]
+    },
+    "the_collector": {
+      "canonical_id": "the_collector",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "ad_scaling"
+      ]
+    },
+    "essence_reaver": {
+      "canonical_id": "essence_reaver",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "ability_haste"
+      ]
+    },
+    "yun_tal_wildarrows": {
+      "canonical_id": "yun_tal_wildarrows",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "attack_speed"
+      ]
+    },
+    "immortal_shieldbow": {
+      "canonical_id": "immortal_shieldbow",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 90.0,
+      "cooldown_leverage_weight": 0.16,
+      "crit_chance": 0.25,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_crit_chance",
+        "has_item_cooldown"
+      ]
+    },
+    "guinsoos_rageblade": {
+      "canonical_id": "guinsoos_rageblade",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.9,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "blade_of_the_ruined_king": {
+      "canonical_id": "blade_of_the_ruined_king",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.9,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "kraken_slayer": {
+      "canonical_id": "kraken_slayer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "wits_end": {
+      "canonical_id": "wits_end",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.8,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "terminus": {
+      "canonical_id": "terminus",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.9,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "trinity_force": {
+      "canonical_id": "trinity_force",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 1.5,
+      "cooldown_leverage_weight": 0.2,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.9,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "grants_on_hit",
+        "ability_haste",
+        "has_item_cooldown"
+      ]
+    },
+    "iceborn_gauntlet": {
+      "canonical_id": "iceborn_gauntlet",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 1.5,
+      "cooldown_leverage_weight": 0.18,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "has_item_cooldown"
+      ]
+    },
+    "redemption": {
+      "canonical_id": "redemption",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 90.0,
+      "cooldown_leverage_weight": 0.22,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.65,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "heal_shield",
+        "has_item_cooldown"
+      ]
+    },
+    "locket_of_the_iron_solari": {
+      "canonical_id": "locket_of_the_iron_solari",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 90.0,
+      "cooldown_leverage_weight": 0.2,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.6,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "heal_shield",
+        "has_item_cooldown"
+      ]
+    },
+    "moonstone_renewer": {
+      "canonical_id": "moonstone_renewer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "heal_shield"
+      ]
+    },
+    "dawncore": {
+      "canonical_id": "dawncore",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.9,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "heal_shield",
+        "ap_scaling"
+      ]
+    },
+    "ardent_censer": {
+      "canonical_id": "ardent_censer",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "heal_shield",
+        "attack_speed"
+      ]
+    },
+    "staff_of_flowing_water": {
+      "canonical_id": "staff_of_flowing_water",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "heal_shield",
+        "ap_scaling"
+      ]
+    },
+    "spirit_visage": {
+      "canonical_id": "spirit_visage",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.85,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "heal_shield"
+      ]
+    },
+    "sunfire_aegis": {
+      "canonical_id": "sunfire_aegis",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "burn_dot"
+      ]
+    },
+    "hollow_radiance": {
+      "canonical_id": "hollow_radiance",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": true,
+      "is_unique": true,
+      "unique_group": null,
+      "has_item_cooldown": false,
+      "base_cooldown_s": null,
+      "cooldown_leverage_weight": 0.0,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.75,
+      "transformed_from": null,
+      "mechanic_tags": [
+        "hp_stacking",
+        "burn_dot"
+      ]
+    },
+    "giants_belt": {
+      "canonical_id": "giants_belt",
+      "modes": [
+        "aram_mayhem",
+        "arena"
+      ],
+      "is_legendary": false,
+      "is_unique": false,
+      "has_item_cooldown": false,
+      "crit_chance": 0.0,
+      "stat_scaling_tier": 0.0,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    }
+  },
+  "champions": {
+    "jinx": {
+      "canonical_id": "jinx",
+      "mechanic_tags": [
+        "marksman",
+        "crit_user",
+        "attack_speed"
+      ]
+    },
+    "senna": {
+      "canonical_id": "senna",
+      "mechanic_tags": [
+        "marksman",
+        "crit_overflow_converter"
+      ],
+      "converter_specs": [
+        {
+          "stat_name": "lifesteal_fraction",
+          "units_per_crit_fraction": 0.35
+        }
+      ]
+    },
+    "yasuo": {
+      "canonical_id": "yasuo",
+      "mechanic_tags": [
+        "skirmisher",
+        "crit_overflow_converter"
+      ],
+      "converter_specs": [
+        {
+          "stat_name": "bonus_ad_per_crit",
+          "units_per_crit_fraction": 40.0
+        }
+      ]
+    },
+    "yone": {
+      "canonical_id": "yone",
+      "mechanic_tags": [
+        "skirmisher",
+        "crit_overflow_converter"
+      ],
+      "converter_specs": [
+        {
+          "stat_name": "bonus_ad_per_crit",
+          "units_per_crit_fraction": 40.0
+        }
+      ]
+    },
+    "ezreal": {
+      "canonical_id": "ezreal",
+      "mechanic_tags": [
+        "spell_weaver",
+        "grants_on_hit"
+      ]
+    },
+    "kogmaw": {
+      "canonical_id": "kogmaw",
+      "mechanic_tags": [
+        "marksman",
+        "grants_on_hit",
+        "attack_speed"
+      ]
+    },
+    "dr_mundo": {
+      "canonical_id": "dr_mundo",
+      "mechanic_tags": [
+        "tank",
+        "hp_stacking"
+      ]
+    },
+    "alistar": {
+      "canonical_id": "alistar",
+      "mechanic_tags": [
+        "tank",
+        "hp_stacking"
+      ]
+    },
+    "veigar": {
+      "canonical_id": "veigar",
+      "mechanic_tags": [
+        "mage",
+        "ap_scaling"
+      ]
+    },
+    "brand": {
+      "canonical_id": "brand",
+      "mechanic_tags": [
+        "mage",
+        "burn_dot",
+        "ap_scaling"
+      ]
+    },
+    "soraka": {
+      "canonical_id": "soraka",
+      "mechanic_tags": [
+        "enchanter",
+        "heal_shield"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "edge_id": "crit_enables_crit_scaler",
+      "edge_type": "augment_pair_synergy",
+      "source_tag": "grants_crit_chance",
+      "target_tag": "scales_with_crit",
+      "weight": 0.2,
+      "symmetric": true,
+      "reason": "Flat crit chance amplifies crit-scaling augment"
+    },
+    {
+      "edge_id": "onhit_spell_synergy",
+      "edge_type": "augment_pair_synergy",
+      "source_tag": "applies_on_hit_on_spell",
+      "target_tag": "grants_on_hit",
+      "weight": 0.18,
+      "symmetric": true,
+      "reason": "Spells trigger stacked on-hit effects"
+    },
+    {
+      "edge_id": "as_onhit_synergy",
+      "edge_type": "augment_pair_synergy",
+      "source_tag": "attack_speed",
+      "target_tag": "grants_on_hit",
+      "weight": 0.14,
+      "symmetric": true,
+      "reason": "Attack speed multiplies on-hit procs"
+    },
+    {
+      "edge_id": "burn_haste_synergy",
+      "edge_type": "augment_pair_synergy",
+      "source_tag": "burn_dot",
+      "target_tag": "ability_haste",
+      "weight": 0.16,
+      "symmetric": true,
+      "reason": "Burn ticks loop with ability haste"
+    },
+    {
+      "edge_id": "heal_crit_synergy",
+      "edge_type": "augment_pair_synergy",
+      "source_tag": "heal_shield",
+      "target_tag": "scales_with_crit",
+      "weight": 0.15,
+      "symmetric": true,
+      "reason": "Healing/shielding scales with crit"
+    },
+    {
+      "edge_id": "hp_heal_synergy",
+      "edge_type": "augment_pair_synergy",
+      "source_tag": "hp_stacking",
+      "target_tag": "heal_shield",
+      "weight": 0.12,
+      "symmetric": true,
+      "reason": "High max HP amplifies percentage shields/heals"
+    },
+    {
+      "edge_id": "item_crit_enables_aug",
+      "edge_type": "context_to_augment",
+      "source_tag": "grants_crit_chance",
+      "target_tag": "scales_with_crit",
+      "weight": 0.12,
+      "reason": "Owned crit item amplifies crit-scaling augment"
+    },
+    {
+      "edge_id": "item_cd_enables_apex",
+      "edge_type": "context_to_augment",
+      "source_tag": "has_item_cooldown",
+      "target_tag": "grants_item_haste",
+      "weight": 0.14,
+      "reason": "Owned cooldown item benefits from Item Haste"
+    },
+    {
+      "edge_id": "ethereal_onhit_item",
+      "edge_type": "augment_item_synergy",
+      "source_tag": "applies_on_hit_on_spell",
+      "target_tag": "grants_on_hit",
+      "weight": 0.16,
+      "reason": "Ethereal Weapon applies item on-hit on spells"
+    },
+    {
+      "edge_id": "crit_scaler_ie_synergy",
+      "edge_type": "augment_item_synergy",
+      "source_tag": "scales_with_crit",
+      "target_entity_id": "infinity_edge",
+      "weight": 0.14,
+      "reason": "Infinity Edge increases crit damage multiplier"
+    },
+    {
+      "edge_id": "burn_aug_liandry",
+      "edge_type": "augment_item_synergy",
+      "source_tag": "burn_dot",
+      "target_tag": "burn_dot",
+      "weight": 0.14,
+      "reason": "Compounding DoT burn synergy"
+    },
+    {
+      "edge_id": "heal_aug_moonstone",
+      "edge_type": "augment_item_synergy",
+      "source_tag": "heal_shield",
+      "target_tag": "heal_shield",
+      "weight": 0.12,
+      "reason": "Heal/shield power stacks multiplicatively"
+    },
+    {
+      "edge_id": "heartsteel_bloodmail_pair",
+      "edge_type": "item_pair_synergy",
+      "source_entity_id": "heartsteel",
+      "target_entity_id": "overlords_bloodmail",
+      "weight": 0.08,
+      "reason": "Bonus HP converts to AD"
+    },
+    {
+      "edge_id": "heartsteel_riftmaker_pair",
+      "edge_type": "item_pair_synergy",
+      "source_entity_id": "heartsteel",
+      "target_entity_id": "riftmaker",
+      "weight": 0.08,
+      "reason": "Bonus HP converts to AP"
+    },
+    {
+      "edge_id": "wod_heartsteel_bloodmail",
+      "edge_type": "amplifies_locked_legendary",
+      "source_entity_id": "overlords_bloodmail",
+      "target_entity_id": "heartsteel",
+      "weight": 0.12,
+      "reason": "Amplifies takedown-stacked Heartsteel HP into AD"
+    },
+    {
+      "edge_id": "wod_heartsteel_titanic",
+      "edge_type": "amplifies_locked_legendary",
+      "source_entity_id": "titanic_hydra",
+      "target_entity_id": "heartsteel",
+      "weight": 0.12,
+      "reason": "Amplifies takedown-stacked Heartsteel HP into on-hit damage"
+    },
+    {
+      "edge_id": "wod_fimbulwinter_unending",
+      "edge_type": "amplifies_locked_legendary",
+      "source_entity_id": "unending_despair",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.12,
+      "reason": "Sustains around locked Fimbulwinter shields"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_blackfire_torch",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "blackfire_torch",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between accelerating_sorcery and blackfire_torch"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_cosmic_drive",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "cosmic_drive",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between accelerating_sorcery and cosmic_drive"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_cryptbloom",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "cryptbloom",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and cryptbloom"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_dawncore",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "dawncore",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and dawncore"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_essence_reaver",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "essence_reaver",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between accelerating_sorcery and essence_reaver"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_liandrys_torment",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "liandrys_torment",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and liandrys_torment"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_lich_bane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "lich_bane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and lich_bane"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_ludens_companion",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "ludens_companion",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and ludens_companion"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_malignance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "malignance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between accelerating_sorcery and malignance"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_nashors_tooth",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "nashors_tooth",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and nashors_tooth"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_navori_flickerblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "navori_flickerblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between accelerating_sorcery and navori_flickerblade"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_rabadons_deathcap",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "rabadons_deathcap",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and rabadons_deathcap"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_riftmaker",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "riftmaker",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and riftmaker"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_shadowflame",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "shadowflame",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and shadowflame"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_staff_of_flowing_water",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "staff_of_flowing_water",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and staff_of_flowing_water"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between accelerating_sorcery and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_void_staff",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "void_staff",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and void_staff"
+    },
+    {
+      "edge_id": "tag_align_accelerating_sorcery_zhonyas_hourglass",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "accelerating_sorcery",
+      "target_entity_id": "zhonyas_hourglass",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between accelerating_sorcery and zhonyas_hourglass"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_ardent_censer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "ardent_censer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and ardent_censer"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_cryptbloom",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "cryptbloom",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and cryptbloom"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_dawncore",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "dawncore",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and dawncore"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_fimbulwinter",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and fimbulwinter"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_locket_of_the_iron_solari",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "locket_of_the_iron_solari",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and locket_of_the_iron_solari"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_moonstone_renewer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "moonstone_renewer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and moonstone_renewer"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_redemption",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "redemption",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and redemption"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_spirit_visage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "spirit_visage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and spirit_visage"
+    },
+    {
+      "edge_id": "tag_align_all_for_you_staff_of_flowing_water",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "all_for_you",
+      "target_entity_id": "staff_of_flowing_water",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between all_for_you and staff_of_flowing_water"
+    },
+    {
+      "edge_id": "tag_align_bread_and_butter_blackfire_torch",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_butter",
+      "target_entity_id": "blackfire_torch",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_butter and blackfire_torch"
+    },
+    {
+      "edge_id": "tag_align_bread_and_butter_cosmic_drive",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_butter",
+      "target_entity_id": "cosmic_drive",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_butter and cosmic_drive"
+    },
+    {
+      "edge_id": "tag_align_bread_and_butter_essence_reaver",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_butter",
+      "target_entity_id": "essence_reaver",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_butter and essence_reaver"
+    },
+    {
+      "edge_id": "tag_align_bread_and_butter_malignance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_butter",
+      "target_entity_id": "malignance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_butter and malignance"
+    },
+    {
+      "edge_id": "tag_align_bread_and_butter_navori_flickerblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_butter",
+      "target_entity_id": "navori_flickerblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_butter and navori_flickerblade"
+    },
+    {
+      "edge_id": "tag_align_bread_and_butter_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_butter",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_butter and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_bread_and_cheese_blackfire_torch",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_cheese",
+      "target_entity_id": "blackfire_torch",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_cheese and blackfire_torch"
+    },
+    {
+      "edge_id": "tag_align_bread_and_cheese_cosmic_drive",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_cheese",
+      "target_entity_id": "cosmic_drive",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_cheese and cosmic_drive"
+    },
+    {
+      "edge_id": "tag_align_bread_and_cheese_essence_reaver",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_cheese",
+      "target_entity_id": "essence_reaver",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_cheese and essence_reaver"
+    },
+    {
+      "edge_id": "tag_align_bread_and_cheese_malignance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_cheese",
+      "target_entity_id": "malignance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_cheese and malignance"
+    },
+    {
+      "edge_id": "tag_align_bread_and_cheese_navori_flickerblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_cheese",
+      "target_entity_id": "navori_flickerblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_cheese and navori_flickerblade"
+    },
+    {
+      "edge_id": "tag_align_bread_and_cheese_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_cheese",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_cheese and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_bread_and_jam_blackfire_torch",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_jam",
+      "target_entity_id": "blackfire_torch",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_jam and blackfire_torch"
+    },
+    {
+      "edge_id": "tag_align_bread_and_jam_cosmic_drive",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_jam",
+      "target_entity_id": "cosmic_drive",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_jam and cosmic_drive"
+    },
+    {
+      "edge_id": "tag_align_bread_and_jam_essence_reaver",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_jam",
+      "target_entity_id": "essence_reaver",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_jam and essence_reaver"
+    },
+    {
+      "edge_id": "tag_align_bread_and_jam_malignance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_jam",
+      "target_entity_id": "malignance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_jam and malignance"
+    },
+    {
+      "edge_id": "tag_align_bread_and_jam_navori_flickerblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_jam",
+      "target_entity_id": "navori_flickerblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_jam and navori_flickerblade"
+    },
+    {
+      "edge_id": "tag_align_bread_and_jam_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "bread_and_jam",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between bread_and_jam and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_fimbulwinter",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and fimbulwinter"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_heartsteel",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "heartsteel",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and heartsteel"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_hollow_radiance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "hollow_radiance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and hollow_radiance"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_iceborn_gauntlet",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "iceborn_gauntlet",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and iceborn_gauntlet"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_jaksho_the_protean",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "jaksho_the_protean",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and jaksho_the_protean"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_liandrys_torment",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "liandrys_torment",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and liandrys_torment"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_overlords_bloodmail",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "overlords_bloodmail",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and overlords_bloodmail"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_riftmaker",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "riftmaker",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and riftmaker"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_spirit_visage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "spirit_visage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and spirit_visage"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_steraks_gage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "steraks_gage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and steraks_gage"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_sunfire_aegis",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "sunfire_aegis",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and sunfire_aegis"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_titanic_hydra",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "titanic_hydra",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and titanic_hydra"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_unending_despair",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "unending_despair",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and unending_despair"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_warmogs_armor",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "warmogs_armor",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and warmogs_armor"
+    },
+    {
+      "edge_id": "tag_align_celestial_body_winters_approach",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "celestial_body",
+      "target_entity_id": "winters_approach",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between celestial_body and winters_approach"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_ardent_censer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "ardent_censer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between circle_of_death and ardent_censer"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_blackfire_torch",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "blackfire_torch",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and blackfire_torch"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_cosmic_drive",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "cosmic_drive",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and cosmic_drive"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_cryptbloom",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "cryptbloom",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and cryptbloom"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_dawncore",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "dawncore",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and dawncore"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_fimbulwinter",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between circle_of_death and fimbulwinter"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_liandrys_torment",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "liandrys_torment",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and liandrys_torment"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_lich_bane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "lich_bane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and lich_bane"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_locket_of_the_iron_solari",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "locket_of_the_iron_solari",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between circle_of_death and locket_of_the_iron_solari"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_ludens_companion",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "ludens_companion",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and ludens_companion"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_malignance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "malignance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and malignance"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_moonstone_renewer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "moonstone_renewer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between circle_of_death and moonstone_renewer"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_nashors_tooth",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "nashors_tooth",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and nashors_tooth"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_rabadons_deathcap",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "rabadons_deathcap",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and rabadons_deathcap"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_redemption",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "redemption",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between circle_of_death and redemption"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_riftmaker",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "riftmaker",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and riftmaker"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_shadowflame",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "shadowflame",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and shadowflame"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_spirit_visage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "spirit_visage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between circle_of_death and spirit_visage"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_staff_of_flowing_water",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "staff_of_flowing_water",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and staff_of_flowing_water"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_void_staff",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "void_staff",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and void_staff"
+    },
+    {
+      "edge_id": "tag_align_circle_of_death_zhonyas_hourglass",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "circle_of_death",
+      "target_entity_id": "zhonyas_hourglass",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between circle_of_death and zhonyas_hourglass"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_ardent_censer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "ardent_censer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and ardent_censer"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_cryptbloom",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "cryptbloom",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and cryptbloom"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_dawncore",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "dawncore",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and dawncore"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_fimbulwinter",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and fimbulwinter"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_heartsteel",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "heartsteel",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and heartsteel"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_hollow_radiance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "hollow_radiance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and hollow_radiance"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_iceborn_gauntlet",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "iceborn_gauntlet",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and iceborn_gauntlet"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_jaksho_the_protean",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "jaksho_the_protean",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and jaksho_the_protean"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_liandrys_torment",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "liandrys_torment",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and liandrys_torment"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_locket_of_the_iron_solari",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "locket_of_the_iron_solari",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and locket_of_the_iron_solari"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_moonstone_renewer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "moonstone_renewer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and moonstone_renewer"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_overlords_bloodmail",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "overlords_bloodmail",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and overlords_bloodmail"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_redemption",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "redemption",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and redemption"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_riftmaker",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "riftmaker",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and riftmaker"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_spirit_visage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "spirit_visage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and spirit_visage"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_staff_of_flowing_water",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "staff_of_flowing_water",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between courage_of_the_colossus and staff_of_flowing_water"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_steraks_gage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "steraks_gage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and steraks_gage"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_sunfire_aegis",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "sunfire_aegis",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and sunfire_aegis"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_titanic_hydra",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "titanic_hydra",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and titanic_hydra"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_unending_despair",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "unending_despair",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and unending_despair"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_warmogs_armor",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "warmogs_armor",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and warmogs_armor"
+    },
+    {
+      "edge_id": "tag_align_courage_of_the_colossus_winters_approach",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "courage_of_the_colossus",
+      "target_entity_id": "winters_approach",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between courage_of_the_colossus and winters_approach"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_fimbulwinter",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and fimbulwinter"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_heartsteel",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "heartsteel",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and heartsteel"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_hollow_radiance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "hollow_radiance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and hollow_radiance"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_iceborn_gauntlet",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "iceborn_gauntlet",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and iceborn_gauntlet"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_infinity_edge",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "infinity_edge",
+      "weight": 0.03,
+      "reason": "Shared mechanic (scales_with_crit) between critical_defense and infinity_edge"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_jaksho_the_protean",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "jaksho_the_protean",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and jaksho_the_protean"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_liandrys_torment",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "liandrys_torment",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and liandrys_torment"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_overlords_bloodmail",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "overlords_bloodmail",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and overlords_bloodmail"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_riftmaker",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "riftmaker",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and riftmaker"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_shadowflame",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "shadowflame",
+      "weight": 0.03,
+      "reason": "Shared mechanic (scales_with_crit) between critical_defense and shadowflame"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_spirit_visage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "spirit_visage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and spirit_visage"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_steraks_gage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "steraks_gage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and steraks_gage"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_sunfire_aegis",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "sunfire_aegis",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and sunfire_aegis"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_titanic_hydra",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "titanic_hydra",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and titanic_hydra"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_unending_despair",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "unending_despair",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and unending_despair"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_warmogs_armor",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "warmogs_armor",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and warmogs_armor"
+    },
+    {
+      "edge_id": "tag_align_critical_defense_winters_approach",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_defense",
+      "target_entity_id": "winters_approach",
+      "weight": 0.03,
+      "reason": "Shared mechanic (hp_stacking) between critical_defense and winters_approach"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_ardent_censer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "ardent_censer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and ardent_censer"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_cryptbloom",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "cryptbloom",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and cryptbloom"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_dawncore",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "dawncore",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and dawncore"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_fimbulwinter",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "fimbulwinter",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and fimbulwinter"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_infinity_edge",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "infinity_edge",
+      "weight": 0.03,
+      "reason": "Shared mechanic (scales_with_crit) between critical_healing and infinity_edge"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_locket_of_the_iron_solari",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "locket_of_the_iron_solari",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and locket_of_the_iron_solari"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_moonstone_renewer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "moonstone_renewer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and moonstone_renewer"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_redemption",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "redemption",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and redemption"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_shadowflame",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "shadowflame",
+      "weight": 0.03,
+      "reason": "Shared mechanic (scales_with_crit) between critical_healing and shadowflame"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_spirit_visage",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "spirit_visage",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and spirit_visage"
+    },
+    {
+      "edge_id": "tag_align_critical_healing_staff_of_flowing_water",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "critical_healing",
+      "target_entity_id": "staff_of_flowing_water",
+      "weight": 0.03,
+      "reason": "Shared mechanic (heal_shield) between critical_healing and staff_of_flowing_water"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_ardent_censer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "ardent_censer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and ardent_censer"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_blade_of_the_ruined_king",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "blade_of_the_ruined_king",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and blade_of_the_ruined_king"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_guinsoos_rageblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "guinsoos_rageblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and guinsoos_rageblade"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_kraken_slayer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "kraken_slayer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and kraken_slayer"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_lich_bane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "lich_bane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between dual_wield and lich_bane"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_nashors_tooth",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "nashors_tooth",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and nashors_tooth"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_navori_flickerblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "navori_flickerblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and navori_flickerblade"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_phantom_dancer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "phantom_dancer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and phantom_dancer"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_rapid_firecannon",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "rapid_firecannon",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and rapid_firecannon"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_runaans_hurricane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "runaans_hurricane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and runaans_hurricane"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_terminus",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "terminus",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and terminus"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_titanic_hydra",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "titanic_hydra",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between dual_wield and titanic_hydra"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between dual_wield and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_wits_end",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "wits_end",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and wits_end"
+    },
+    {
+      "edge_id": "tag_align_dual_wield_yun_tal_wildarrows",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "dual_wield",
+      "target_entity_id": "yun_tal_wildarrows",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between dual_wield and yun_tal_wildarrows"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_blade_of_the_ruined_king",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "blade_of_the_ruined_king",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and blade_of_the_ruined_king"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_guinsoos_rageblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "guinsoos_rageblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and guinsoos_rageblade"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_kraken_slayer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "kraken_slayer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and kraken_slayer"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_lich_bane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "lich_bane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and lich_bane"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_nashors_tooth",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "nashors_tooth",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and nashors_tooth"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_runaans_hurricane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "runaans_hurricane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and runaans_hurricane"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_terminus",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "terminus",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and terminus"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_titanic_hydra",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "titanic_hydra",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and titanic_hydra"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_ethereal_weapon_wits_end",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "ethereal_weapon",
+      "target_entity_id": "wits_end",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between ethereal_weapon and wits_end"
+    },
+    {
+      "edge_id": "tag_align_eureka_blackfire_torch",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "blackfire_torch",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between eureka and blackfire_torch"
+    },
+    {
+      "edge_id": "tag_align_eureka_cosmic_drive",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "cosmic_drive",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between eureka and cosmic_drive"
+    },
+    {
+      "edge_id": "tag_align_eureka_cryptbloom",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "cryptbloom",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and cryptbloom"
+    },
+    {
+      "edge_id": "tag_align_eureka_dawncore",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "dawncore",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and dawncore"
+    },
+    {
+      "edge_id": "tag_align_eureka_essence_reaver",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "essence_reaver",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between eureka and essence_reaver"
+    },
+    {
+      "edge_id": "tag_align_eureka_liandrys_torment",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "liandrys_torment",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and liandrys_torment"
+    },
+    {
+      "edge_id": "tag_align_eureka_lich_bane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "lich_bane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and lich_bane"
+    },
+    {
+      "edge_id": "tag_align_eureka_ludens_companion",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "ludens_companion",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and ludens_companion"
+    },
+    {
+      "edge_id": "tag_align_eureka_malignance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "malignance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between eureka and malignance"
+    },
+    {
+      "edge_id": "tag_align_eureka_nashors_tooth",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "nashors_tooth",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and nashors_tooth"
+    },
+    {
+      "edge_id": "tag_align_eureka_navori_flickerblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "navori_flickerblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between eureka and navori_flickerblade"
+    },
+    {
+      "edge_id": "tag_align_eureka_rabadons_deathcap",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "rabadons_deathcap",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and rabadons_deathcap"
+    },
+    {
+      "edge_id": "tag_align_eureka_riftmaker",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "riftmaker",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and riftmaker"
+    },
+    {
+      "edge_id": "tag_align_eureka_shadowflame",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "shadowflame",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and shadowflame"
+    },
+    {
+      "edge_id": "tag_align_eureka_staff_of_flowing_water",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "staff_of_flowing_water",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and staff_of_flowing_water"
+    },
+    {
+      "edge_id": "tag_align_eureka_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ability_haste) between eureka and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_eureka_void_staff",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "void_staff",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and void_staff"
+    },
+    {
+      "edge_id": "tag_align_eureka_zhonyas_hourglass",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "eureka",
+      "target_entity_id": "zhonyas_hourglass",
+      "weight": 0.03,
+      "reason": "Shared mechanic (ap_scaling) between eureka and zhonyas_hourglass"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_ardent_censer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "ardent_censer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and ardent_censer"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_blade_of_the_ruined_king",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "blade_of_the_ruined_king",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and blade_of_the_ruined_king"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_guinsoos_rageblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "guinsoos_rageblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and guinsoos_rageblade"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_kraken_slayer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "kraken_slayer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and kraken_slayer"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_lich_bane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "lich_bane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between fan_the_hammer and lich_bane"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_nashors_tooth",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "nashors_tooth",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and nashors_tooth"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_navori_flickerblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "navori_flickerblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and navori_flickerblade"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_phantom_dancer",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "phantom_dancer",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and phantom_dancer"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_rapid_firecannon",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "rapid_firecannon",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and rapid_firecannon"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_runaans_hurricane",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "runaans_hurricane",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and runaans_hurricane"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_terminus",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "terminus",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and terminus"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_titanic_hydra",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "titanic_hydra",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between fan_the_hammer and titanic_hydra"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_trinity_force",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "trinity_force",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between fan_the_hammer and trinity_force"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_wits_end",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "wits_end",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and wits_end"
+    },
+    {
+      "edge_id": "tag_align_fan_the_hammer_yun_tal_wildarrows",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "fan_the_hammer",
+      "target_entity_id": "yun_tal_wildarrows",
+      "weight": 0.03,
+      "reason": "Shared mechanic (attack_speed) between fan_the_hammer and yun_tal_wildarrows"
+    },
+    {
+      "edge_id": "tag_align_firebrand_blackfire_torch",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "firebrand",
+      "target_entity_id": "blackfire_torch",
+      "weight": 0.03,
+      "reason": "Shared mechanic (burn_dot) between firebrand and blackfire_torch"
+    },
+    {
+      "edge_id": "tag_align_firebrand_blade_of_the_ruined_king",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "firebrand",
+      "target_entity_id": "blade_of_the_ruined_king",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between firebrand and blade_of_the_ruined_king"
+    },
+    {
+      "edge_id": "tag_align_firebrand_guinsoos_rageblade",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "firebrand",
+      "target_entity_id": "guinsoos_rageblade",
+      "weight": 0.03,
+      "reason": "Shared mechanic (grants_on_hit) between firebrand and guinsoos_rageblade"
+    },
+    {
+      "edge_id": "tag_align_firebrand_hollow_radiance",
+      "edge_type": "augment_item_synergy",
+      "source_entity_id": "firebrand",
+      "target_entity_id": "hollow_radiance",
+      "weight": 0.03,
+      "reason": "Shared mechanic (burn_dot) between firebrand and hollow_radiance"
+    }
+  ]
+}

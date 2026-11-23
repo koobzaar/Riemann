@@ -1,0 +1,1593 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Riemann Inference Backend",
+    "description": "Statistical dynamic recommendation engine for League of Legends ARAM: Mayhem and Arena",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/catalog/status": {
+      "get": {
+        "summary": "Catalog Status",
+        "operationId": "catalog_status_v1_catalog_status_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogStatusResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/catalog/sync": {
+      "post": {
+        "summary": "Catalog Sync",
+        "operationId": "catalog_sync_v1_catalog_sync_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SyncRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Req"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/resolve/augment": {
+      "post": {
+        "summary": "Resolve Augment",
+        "operationId": "resolve_augment_v1_resolve_augment_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveAugmentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResolveAugmentResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/recommend/augments": {
+      "post": {
+        "summary": "Post Recommend Augments",
+        "operationId": "post_recommend_augments_v1_recommend_augments_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommendAugmentsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendAugmentsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/recommend/items": {
+      "post": {
+        "summary": "Post Recommend Items",
+        "operationId": "post_recommend_items_v1_recommend_items_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommendItemsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendItemsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdapterRunReport": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "error",
+              "skipped"
+            ],
+            "title": "Status"
+          },
+          "last_sync_utc": {
+            "type": "string",
+            "title": "Last Sync Utc"
+          },
+          "rows_loaded": {
+            "type": "integer",
+            "title": "Rows Loaded",
+            "default": 0
+          },
+          "rejected_rows": {
+            "type": "integer",
+            "title": "Rejected Rows",
+            "default": 0
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "status",
+          "last_sync_utc"
+        ],
+        "title": "AdapterRunReport"
+      },
+      "ArenaSecondary": {
+        "properties": {
+          "top1_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top1 Rate"
+          },
+          "avg_placement": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg Placement"
+          }
+        },
+        "type": "object",
+        "title": "ArenaSecondary"
+      },
+      "AugmentBindings": {
+        "properties": {
+          "weapon_of_destiny_item_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weapon Of Destiny Item Id"
+          },
+          "weapon_of_destiny_state": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "open",
+              "locked",
+              "sold_or_unknown"
+            ],
+            "title": "Weapon Of Destiny State",
+            "default": "auto"
+          }
+        },
+        "type": "object",
+        "title": "AugmentBindings"
+      },
+      "AugmentBreakdown": {
+        "properties": {
+          "pair_synergy_logit": {
+            "type": "number",
+            "title": "Pair Synergy Logit",
+            "default": 0.0
+          },
+          "context_synergy_logit": {
+            "type": "number",
+            "title": "Context Synergy Logit",
+            "default": 0.0
+          },
+          "overcap_penalty_delta_logit": {
+            "type": "number",
+            "title": "Overcap Penalty Delta Logit",
+            "default": 0.0
+          }
+        },
+        "type": "object",
+        "title": "AugmentBreakdown"
+      },
+      "AugmentPhysicalMetrics": {
+        "properties": {
+          "usable_crit_added": {
+            "type": "number",
+            "title": "Usable Crit Added",
+            "default": 0.0
+          },
+          "wasted_crit_added": {
+            "type": "number",
+            "title": "Wasted Crit Added",
+            "default": 0.0
+          },
+          "converted_overflow_stats": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Converted Overflow Stats"
+          }
+        },
+        "type": "object",
+        "title": "AugmentPhysicalMetrics"
+      },
+      "AugmentRecommendation": {
+        "properties": {
+          "canonical_id": {
+            "type": "string",
+            "title": "Canonical Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "composite_score": {
+            "type": "number",
+            "title": "Composite Score"
+          },
+          "association_mean_logit": {
+            "type": "number",
+            "title": "Association Mean Logit"
+          },
+          "association_ci_90_logit": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Association Ci 90 Logit"
+          },
+          "standardized_wr_delta": {
+            "type": "number",
+            "title": "Standardized Wr Delta"
+          },
+          "mechanistic_delta_logit": {
+            "type": "number",
+            "title": "Mechanistic Delta Logit"
+          },
+          "bias_sensitivity_bound": {
+            "type": "number",
+            "title": "Bias Sensitivity Bound"
+          },
+          "sensitivity_envelope_logit": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Sensitivity Envelope Logit"
+          },
+          "mean_bias_margin": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Bias Margin"
+          },
+          "is_bias_robust_on_means": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Bias Robust On Means"
+          },
+          "envelope_gap": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Envelope Gap"
+          },
+          "is_envelope_separated": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Envelope Separated"
+          },
+          "effective_sample_size": {
+            "type": "number",
+            "title": "Effective Sample Size"
+          },
+          "corroboration": {
+            "$ref": "#/components/schemas/CorroborationInfo"
+          },
+          "arena_secondary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ArenaSecondary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "physical_metrics": {
+            "$ref": "#/components/schemas/AugmentPhysicalMetrics"
+          },
+          "prior_mean_logit": {
+            "type": "number",
+            "title": "Prior Mean Logit"
+          },
+          "breakdown": {
+            "$ref": "#/components/schemas/AugmentBreakdown"
+          },
+          "reasons": {
+            "items": {
+              "$ref": "#/components/schemas/ReasonItem"
+            },
+            "type": "array",
+            "title": "Reasons"
+          },
+          "top_item_pivots": {
+            "items": {
+              "$ref": "#/components/schemas/ItemPivotSummary"
+            },
+            "type": "array",
+            "title": "Top Item Pivots"
+          }
+        },
+        "type": "object",
+        "required": [
+          "canonical_id",
+          "display_name",
+          "composite_score",
+          "association_mean_logit",
+          "association_ci_90_logit",
+          "standardized_wr_delta",
+          "mechanistic_delta_logit",
+          "bias_sensitivity_bound",
+          "sensitivity_envelope_logit",
+          "effective_sample_size",
+          "corroboration",
+          "physical_metrics",
+          "prior_mean_logit",
+          "breakdown"
+        ],
+        "title": "AugmentRecommendation"
+      },
+      "CatalogStatusResponse": {
+        "properties": {
+          "snapshot_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Snapshot Id"
+          },
+          "catalog_patch": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Catalog Patch"
+          },
+          "graph_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Graph Version"
+          },
+          "counts": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ModeCounts"
+            },
+            "propertyNames": {
+              "enum": [
+                "aram_mayhem",
+                "arena"
+              ]
+            },
+            "type": "object",
+            "title": "Counts"
+          },
+          "locales": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "en_us",
+                "pt_br"
+              ]
+            },
+            "type": "array",
+            "title": "Locales",
+            "default": [
+              "en_us",
+              "pt_br"
+            ]
+          },
+          "adapters": {
+            "items": {
+              "$ref": "#/components/schemas/AdapterRunReport"
+            },
+            "type": "array",
+            "title": "Adapters"
+          }
+        },
+        "type": "object",
+        "required": [
+          "counts"
+        ],
+        "title": "CatalogStatusResponse"
+      },
+      "CorroborationInfo": {
+        "properties": {
+          "secondary_sources_checked": {
+            "type": "integer",
+            "title": "Secondary Sources Checked",
+            "default": 0
+          },
+          "max_source_disagreement_logit": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Source Disagreement Logit"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "no_secondary",
+              "aligned",
+              "divergent"
+            ],
+            "title": "Status",
+            "default": "no_secondary"
+          }
+        },
+        "type": "object",
+        "title": "CorroborationInfo"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "degraded_empty_catalog",
+              "degraded_cache_reload_required"
+            ],
+            "title": "Status"
+          },
+          "snapshot_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Snapshot Id"
+          },
+          "catalog_patch": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Catalog Patch"
+          },
+          "modes": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "aram_mayhem",
+                "arena"
+              ]
+            },
+            "type": "array",
+            "title": "Modes",
+            "default": [
+              "aram_mayhem",
+              "arena"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "HealthResponse"
+      },
+      "ItemBreakdown": {
+        "properties": {
+          "item_haste_logit": {
+            "type": "number",
+            "title": "Item Haste Logit",
+            "default": 0.0
+          },
+          "weapon_destiny_logit": {
+            "type": "number",
+            "title": "Weapon Destiny Logit",
+            "default": 0.0
+          },
+          "item_graph_logit": {
+            "type": "number",
+            "title": "Item Graph Logit",
+            "default": 0.0
+          },
+          "overcap_penalty_delta_logit": {
+            "type": "number",
+            "title": "Overcap Penalty Delta Logit",
+            "default": 0.0
+          }
+        },
+        "type": "object",
+        "title": "ItemBreakdown"
+      },
+      "ItemPhysicalMetrics": {
+        "properties": {
+          "base_cooldown_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Base Cooldown S"
+          },
+          "effective_cooldown_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective Cooldown S"
+          },
+          "ideal_activation_rate_hz": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ideal Activation Rate Hz"
+          },
+          "usable_crit_added": {
+            "type": "number",
+            "title": "Usable Crit Added",
+            "default": 0.0
+          },
+          "wasted_crit_added": {
+            "type": "number",
+            "title": "Wasted Crit Added",
+            "default": 0.0
+          },
+          "converted_overflow_stats": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Converted Overflow Stats"
+          },
+          "weapon_of_destiny_bound_item": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weapon Of Destiny Bound Item"
+          }
+        },
+        "type": "object",
+        "title": "ItemPhysicalMetrics"
+      },
+      "ItemPivotSummary": {
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "title": "Item Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "composite_score": {
+            "type": "number",
+            "title": "Composite Score"
+          },
+          "reason_codes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reason Codes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "item_id",
+          "display_name",
+          "composite_score"
+        ],
+        "title": "ItemPivotSummary"
+      },
+      "ItemRecommendation": {
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "title": "Item Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "composite_score": {
+            "type": "number",
+            "title": "Composite Score"
+          },
+          "association_mean_logit": {
+            "type": "number",
+            "title": "Association Mean Logit"
+          },
+          "association_ci_90_logit": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Association Ci 90 Logit"
+          },
+          "standardized_wr_delta": {
+            "type": "number",
+            "title": "Standardized Wr Delta"
+          },
+          "mechanistic_delta_logit": {
+            "type": "number",
+            "title": "Mechanistic Delta Logit"
+          },
+          "bias_sensitivity_bound": {
+            "type": "number",
+            "title": "Bias Sensitivity Bound"
+          },
+          "sensitivity_envelope_logit": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Sensitivity Envelope Logit"
+          },
+          "mean_bias_margin": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Bias Margin"
+          },
+          "is_bias_robust_on_means": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Bias Robust On Means"
+          },
+          "envelope_gap": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Envelope Gap"
+          },
+          "is_envelope_separated": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Envelope Separated"
+          },
+          "effective_sample_size": {
+            "type": "number",
+            "title": "Effective Sample Size"
+          },
+          "corroboration": {
+            "$ref": "#/components/schemas/CorroborationInfo"
+          },
+          "arena_secondary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ArenaSecondary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "physical_metrics": {
+            "$ref": "#/components/schemas/ItemPhysicalMetrics"
+          },
+          "prior_mean_logit": {
+            "type": "number",
+            "title": "Prior Mean Logit"
+          },
+          "breakdown": {
+            "$ref": "#/components/schemas/ItemBreakdown"
+          },
+          "reasons": {
+            "items": {
+              "$ref": "#/components/schemas/ReasonItem"
+            },
+            "type": "array",
+            "title": "Reasons"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "item_id",
+          "display_name",
+          "composite_score",
+          "association_mean_logit",
+          "association_ci_90_logit",
+          "standardized_wr_delta",
+          "mechanistic_delta_logit",
+          "bias_sensitivity_bound",
+          "sensitivity_envelope_logit",
+          "effective_sample_size",
+          "corroboration",
+          "physical_metrics",
+          "prior_mean_logit",
+          "breakdown"
+        ],
+        "title": "ItemRecommendation"
+      },
+      "ModeCounts": {
+        "properties": {
+          "augments": {
+            "type": "integer",
+            "title": "Augments",
+            "default": 0
+          },
+          "items": {
+            "type": "integer",
+            "title": "Items",
+            "default": 0
+          },
+          "champions": {
+            "type": "integer",
+            "title": "Champions",
+            "default": 0
+          },
+          "stats_rows": {
+            "type": "integer",
+            "title": "Stats Rows",
+            "default": 0
+          },
+          "posteriors": {
+            "type": "integer",
+            "title": "Posteriors",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "title": "ModeCounts"
+      },
+      "ReasonItem": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "delta_logit": {
+            "type": "number",
+            "title": "Delta Logit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "delta_logit"
+        ],
+        "title": "ReasonItem"
+      },
+      "RecommendAugmentsRequest": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "aram_mayhem",
+              "arena"
+            ],
+            "title": "Mode"
+          },
+          "champion_id": {
+            "type": "string",
+            "title": "Champion Id"
+          },
+          "slot_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 4.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Slot Index"
+          },
+          "chosen_augments": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Chosen Augments"
+          },
+          "current_items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Current Items"
+          },
+          "offered_augments": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Offered Augments"
+          },
+          "observed_crit_chance": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Crit Chance"
+          },
+          "augment_bindings": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AugmentBindings"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "locale": {
+            "type": "string",
+            "enum": [
+              "en_us",
+              "pt_br",
+              "auto"
+            ],
+            "title": "Locale",
+            "default": "en_us"
+          },
+          "top_item_pivots_k": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Top Item Pivots K",
+            "default": 3
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode",
+          "champion_id",
+          "offered_augments"
+        ],
+        "title": "RecommendAugmentsRequest"
+      },
+      "RecommendAugmentsResponse": {
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "title": "Snapshot Id"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "aram_mayhem",
+              "arena"
+            ],
+            "title": "Mode"
+          },
+          "champion_id": {
+            "type": "string",
+            "title": "Champion Id"
+          },
+          "selection_bias_warning": {
+            "type": "boolean",
+            "title": "Selection Bias Warning"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "unresolved_inputs": {
+            "items": {
+              "$ref": "#/components/schemas/UnresolvedInput"
+            },
+            "type": "array",
+            "title": "Unresolved Inputs"
+          },
+          "recommendations": {
+            "items": {
+              "$ref": "#/components/schemas/AugmentRecommendation"
+            },
+            "type": "array",
+            "title": "Recommendations"
+          }
+        },
+        "type": "object",
+        "required": [
+          "snapshot_id",
+          "mode",
+          "champion_id",
+          "selection_bias_warning",
+          "recommendations"
+        ],
+        "title": "RecommendAugmentsResponse"
+      },
+      "RecommendItemsRequest": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "aram_mayhem",
+              "arena"
+            ],
+            "title": "Mode"
+          },
+          "champion_id": {
+            "type": "string",
+            "title": "Champion Id"
+          },
+          "slot_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 6.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Slot Index"
+          },
+          "chosen_augments": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Chosen Augments"
+          },
+          "current_items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Current Items"
+          },
+          "observed_crit_chance": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Crit Chance"
+          },
+          "augment_bindings": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AugmentBindings"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "locale": {
+            "type": "string",
+            "enum": [
+              "en_us",
+              "pt_br",
+              "auto"
+            ],
+            "title": "Locale",
+            "default": "en_us"
+          },
+          "top_k": {
+            "type": "integer",
+            "maximum": 50.0,
+            "minimum": 1.0,
+            "title": "Top K",
+            "default": 10
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode",
+          "champion_id"
+        ],
+        "title": "RecommendItemsRequest"
+      },
+      "RecommendItemsResponse": {
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "title": "Snapshot Id"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "aram_mayhem",
+              "arena"
+            ],
+            "title": "Mode"
+          },
+          "champion_id": {
+            "type": "string",
+            "title": "Champion Id"
+          },
+          "selection_bias_warning": {
+            "type": "boolean",
+            "title": "Selection Bias Warning"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "recommendations": {
+            "items": {
+              "$ref": "#/components/schemas/ItemRecommendation"
+            },
+            "type": "array",
+            "title": "Recommendations"
+          }
+        },
+        "type": "object",
+        "required": [
+          "snapshot_id",
+          "mode",
+          "champion_id",
+          "selection_bias_warning",
+          "recommendations"
+        ],
+        "title": "RecommendItemsResponse"
+      },
+      "ResolveAugmentRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "locale": {
+            "type": "string",
+            "enum": [
+              "en_us",
+              "pt_br",
+              "auto"
+            ],
+            "title": "Locale",
+            "default": "auto"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "aram_mayhem",
+              "arena"
+            ],
+            "title": "Mode"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "mode"
+        ],
+        "title": "ResolveAugmentRequest"
+      },
+      "ResolveAugmentResponse": {
+        "properties": {
+          "resolved": {
+            "type": "boolean",
+            "title": "Resolved"
+          },
+          "canonical_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Id"
+          },
+          "display_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Display Name"
+          },
+          "detected_locale": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "en_us",
+                  "pt_br"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detected Locale"
+          },
+          "confidence": {
+            "type": "number",
+            "title": "Confidence"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "below_confidence_threshold",
+              "ambiguous_match"
+            ],
+            "title": "Reason"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/ResolveCandidate"
+            },
+            "type": "array",
+            "title": "Candidates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resolved",
+          "confidence",
+          "reason"
+        ],
+        "title": "ResolveAugmentResponse"
+      },
+      "ResolveCandidate": {
+        "properties": {
+          "canonical_id": {
+            "type": "string",
+            "title": "Canonical Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "locale": {
+            "type": "string",
+            "enum": [
+              "en_us",
+              "pt_br"
+            ],
+            "title": "Locale"
+          },
+          "confidence": {
+            "type": "number",
+            "title": "Confidence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "canonical_id",
+          "display_name",
+          "locale",
+          "confidence"
+        ],
+        "title": "ResolveCandidate"
+      },
+      "SyncRequest": {
+        "properties": {
+          "adapters": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Adapters"
+          },
+          "catalog_source": {
+            "type": "string",
+            "enum": [
+              "cdragon",
+              "fixture"
+            ],
+            "title": "Catalog Source",
+            "default": "fixture"
+          },
+          "fixture_profile": {
+            "type": "string",
+            "title": "Fixture Profile",
+            "default": "default"
+          }
+        },
+        "type": "object",
+        "title": "SyncRequest"
+      },
+      "SyncResponse": {
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "title": "Snapshot Id"
+          },
+          "catalog_patch": {
+            "type": "string",
+            "title": "Catalog Patch"
+          },
+          "active_snapshot_preserved": {
+            "type": "boolean",
+            "title": "Active Snapshot Preserved",
+            "default": false
+          },
+          "adapters": {
+            "items": {
+              "$ref": "#/components/schemas/AdapterRunReport"
+            },
+            "type": "array",
+            "title": "Adapters"
+          }
+        },
+        "type": "object",
+        "required": [
+          "snapshot_id",
+          "catalog_patch",
+          "adapters"
+        ],
+        "title": "SyncResponse"
+      },
+      "UnresolvedInput": {
+        "properties": {
+          "raw_input": {
+            "type": "string",
+            "title": "Raw Input"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "below_confidence_threshold",
+              "ambiguous_match"
+            ],
+            "title": "Reason"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/ResolveCandidate"
+            },
+            "type": "array",
+            "title": "Candidates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "raw_input",
+          "reason"
+        ],
+        "title": "UnresolvedInput"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

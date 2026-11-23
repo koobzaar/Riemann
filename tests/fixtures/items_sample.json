@@ -1,0 +1,90 @@
+{
+  "items": [
+    {
+      "canonical_id": "heartsteel",
+      "is_legendary": true,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 10.0,
+      "cooldown_leverage_weight": 0.24,
+      "stat_scaling_tier": 1.0,
+      "mechanic_tags": [
+        "hp_stacking",
+        "has_item_cooldown"
+      ]
+    },
+    {
+      "canonical_id": "warmogs_armor",
+      "is_legendary": true,
+      "has_item_cooldown": false,
+      "stat_scaling_tier": 0.75,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    {
+      "canonical_id": "thornmail",
+      "is_legendary": true,
+      "has_item_cooldown": false,
+      "stat_scaling_tier": 0.25,
+      "mechanic_tags": [
+        "tank_defense"
+      ]
+    },
+    {
+      "canonical_id": "overlords_bloodmail",
+      "is_legendary": true,
+      "stat_scaling_tier": 0.85,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    {
+      "canonical_id": "rabadons_deathcap",
+      "is_legendary": true,
+      "stat_scaling_tier": 1.0,
+      "mechanic_tags": [
+        "ap_scaling"
+      ]
+    },
+    {
+      "canonical_id": "winters_approach",
+      "is_legendary": true,
+      "stat_scaling_tier": 0.65,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    {
+      "canonical_id": "fimbulwinter",
+      "is_legendary": true,
+      "transformed_from": "winters_approach",
+      "has_item_cooldown": true,
+      "base_cooldown_s": 8.0,
+      "cooldown_leverage_weight": 0.22,
+      "stat_scaling_tier": 0.85,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    {
+      "canonical_id": "unending_despair",
+      "is_legendary": true,
+      "has_item_cooldown": true,
+      "base_cooldown_s": 5.0,
+      "cooldown_leverage_weight": 0.22,
+      "stat_scaling_tier": 0.8,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    },
+    {
+      "canonical_id": "giants_belt",
+      "is_legendary": false,
+      "is_unique": false,
+      "stat_scaling_tier": 0.0,
+      "mechanic_tags": [
+        "hp_stacking"
+      ]
+    }
+  ]
+}

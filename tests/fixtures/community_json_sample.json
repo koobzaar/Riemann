@@ -1,0 +1,32 @@
+{
+  "schema_version": "v1",
+  "source_id": "community_json",
+  "overlap_group": "riot_global_pool",
+  "source_priority": 20,
+  "is_disjoint_verified": false,
+  "catalog_patch_hint": "26.22",
+  "observations": [
+    {
+      "mode": "aram_mayhem",
+      "metric_type": "win",
+      "patch": "26.22",
+      "champion_id": "dr_mundo",
+      "entity_type": "augment",
+      "entity_id": "apex_inventor",
+      "slot_key": "slot_1",
+      "games": 200,
+      "wins": 128,
+      "baseline_rate": 0.5
+    },
+    {
+      "mode": "aram_mayhem",
+      "metric_type": "win",
+      "patch": "26.22",
+      "champion_id": "dr_mundo",
+      "entity_type": "augment",
+      "entity_id": "weapon_of_destiny",
+      "slot_key": "slot_1",
+      "curated_tier": "S"
+    }
+  ]
+}
