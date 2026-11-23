@@ -1,0 +1,14 @@
+.worktrees/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.hypothesis/
+*.db
+*.sqlite
+*.sqlite3
+.explore/
+.headless/
+dist/
+build/
+*.egg-info/
