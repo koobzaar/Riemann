@@ -10,6 +10,8 @@ services:
       RIEMANN_GRAPH_PATH: /app/data/relation_graph.json
       RIEMANN_BLOCK_OUTBOUND_ON_INFERENCE: ${RIEMANN_BLOCK_OUTBOUND_ON_INFERENCE:-0}
       RIEMANN_FIXTURE_DIR: /app/tests/fixtures
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      RIEMANN_GEMINI_MODEL: ${RIEMANN_GEMINI_MODEL:-gemini-3.5-flash-lite}
     volumes:
       - riemann_sqlite:/data
     healthcheck:

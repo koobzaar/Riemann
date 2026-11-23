@@ -130,6 +130,16 @@ Full OpenAPI specification is exported at [`openapi.json`](openapi.json).
 | `POST` | `/v1/resolve/augment` | Bilingual (`en_us` / `pt_br` / `auto`) fuzzy OCR resolution with confidence (`>= 0.80`) & margin (`>= 0.08`) guards |
 | `POST` | `/v1/recommend/augments` | Dynamic augment ranking with physical metrics, sensitivity envelopes, and post-pick item pivots |
 | `POST` | `/v1/recommend/items` | Dynamic item ranking with item haste physics, *Weapon of Destiny* lock-in state machine, and crit overcap guards |
+| `POST` | `/v1/explain/build` | Gemini explanation of the current build and the top five ranked item recommendations |
+
+### Gemini enrichment and explanations
+
+Set `GEMINI_API_KEY` in the root `.env` file when using Docker Compose, or set it in the process environment when running the backend directly. Docker Compose defaults to `gemini-3.5-flash-lite`. Set `RIEMANN_GEMINI_MODEL` in the process environment to override the model.
+
+- Add `"enrich_mechanics": true` to `POST /v1/catalog/sync` to send the patch ID and augment descriptions to Gemini. The sync response and `/v1/catalog/status` expose `mechanics_enrichment` with the run status and any notes with verified catalog quotes. Sync still activates the base snapshot if Gemini is unavailable or returns an error.
+- Send the same JSON body as `/v1/recommend/items` to `/v1/explain/build`. It sends the build context, relevant mechanics notes, and up to five ranked items to Gemini. The response includes `snapshot_id`, `model`, and `explanation`. The request's locale controls the explanation language, with `auto` using English.
+
+OCR resolution and recommendation requests continue to run locally. Mechanics notes provide context for explanations while scoring uses the catalog, curated graph, and statistical model.
 
 ---
 
@@ -175,5 +185,5 @@ python -m venv .venv
 ## Roadmap
 
 - **Phase 1 (Complete):** Containerized statistical inference backend, CommunityDragon + OP.GG + `community_json` adapters, curated Relation Graph, bilingual OCR resolver, and Docker E2E verification.
-- **Phase 1.5 (Planned):** Google Gemini API (`google-genai`) backend integration for sync-time patch mechanics enrichment and on-demand build explanations.
+- **Phase 1.5 (Complete):** Google Gemini API (`google-genai`) backend integration for sync-time patch mechanics enrichment and on-demand build explanations.
 - **Phase 2 (Planned):** Thin Windows host agent polling Riot's Live Client Data API (`127.0.0.1:2999`), EN/PT-BR screen capture with Gemini Vision OCR fallback, and transparent click-through overlay UI.

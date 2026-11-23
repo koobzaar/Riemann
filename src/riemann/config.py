@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 
@@ -35,6 +35,8 @@ class Settings:
     opgg_delay_s: float
     opgg_timeout_s: float
     hyperparams: ModelHyperparams = ModelHyperparams()
+    gemini_api_key: str | None = field(default=None, repr=False)
+    gemini_model: str = "gemini-3.8-flash"
 
     @classmethod
     def from_env(cls) -> Settings:
@@ -53,4 +55,6 @@ class Settings:
             in {"1", "true", "TRUE", "yes"},
             opgg_delay_s=float(os.getenv("RIEMANN_OPGG_DELAY_S", "0.5")),
             opgg_timeout_s=float(os.getenv("RIEMANN_OPGG_TIMEOUT_S", "10.0")),
+            gemini_api_key=os.getenv("GEMINI_API_KEY", "").strip() or None,
+            gemini_model=os.getenv("RIEMANN_GEMINI_MODEL", "").strip() or cls.gemini_model,
         )

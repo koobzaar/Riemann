@@ -7,6 +7,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from riemann.config import Settings
 from riemann.models import (
+    BuildExplanationResponse,
     CatalogStatusResponse,
     HealthResponse,
     NormalizedError,
@@ -92,6 +93,19 @@ def create_app(service: RiemannService | None = None) -> FastAPI:
     @app.post("/v1/recommend/items", response_model=RecommendItemsResponse)
     def post_recommend_items(req: RecommendItemsRequest) -> RecommendItemsResponse:
         return svc.recommend_items(req)
+
+    @app.post(
+        "/v1/explain/build",
+        response_model=BuildExplanationResponse,
+        responses={
+            422: {"model": NormalizedError},
+            502: {"model": NormalizedError},
+            503: {"model": NormalizedError},
+        },
+    )
+    def post_explain_build(req: RecommendItemsRequest) -> BuildExplanationResponse:
+        """Generate a localized explanation of up to five ranked item recommendations."""
+        return svc.explain_build(req)
 
     return app
 

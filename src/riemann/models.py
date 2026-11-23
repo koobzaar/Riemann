@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import math
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints, field_validator, model_validator
 
 GameMode = Literal["aram_mayhem", "arena"]
 PublicLocale = Literal["en_us", "pt_br"]
@@ -200,6 +200,20 @@ class ModeCounts(BaseModel):
     posteriors: int = 0
 
 
+class AugmentMechanicsNote(BaseModel):
+    augment_id: str
+    source_quote: Annotated[
+        str, StringConstraints(strip_whitespace=True, min_length=1, max_length=500)
+    ]
+    note: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=500)]
+
+
+class MechanicsEnrichment(BaseModel):
+    status: Literal["ok", "unavailable", "error"]
+    model: str | None = None
+    notes: list[AugmentMechanicsNote] = Field(default_factory=list)
+
+
 class CatalogStatusResponse(BaseModel):
     snapshot_id: str | None = None
     catalog_patch: str | None = None
@@ -207,12 +221,14 @@ class CatalogStatusResponse(BaseModel):
     counts: dict[GameMode, ModeCounts]
     locales: list[PublicLocale] = ["en_us", "pt_br"]
     adapters: list[AdapterRunReport] = Field(default_factory=list)
+    mechanics_enrichment: MechanicsEnrichment | None = None
 
 
 class SyncRequest(BaseModel):
     adapters: list[str] | None = None
     catalog_source: Literal["cdragon", "fixture"] = "fixture"
     fixture_profile: str = "default"
+    enrich_mechanics: bool = False
 
 
 class SyncResponse(BaseModel):
@@ -220,6 +236,7 @@ class SyncResponse(BaseModel):
     catalog_patch: str
     active_snapshot_preserved: bool = False
     adapters: list[AdapterRunReport]
+    mechanics_enrichment: MechanicsEnrichment | None = None
 
 
 class ResolveAugmentRequest(BaseModel):
@@ -410,3 +427,9 @@ class RecommendItemsResponse(BaseModel):
     selection_bias_warning: bool
     warnings: list[str] = Field(default_factory=list)
     recommendations: list[ItemRecommendation]
+
+
+class BuildExplanationResponse(BaseModel):
+    snapshot_id: str
+    model: str
+    explanation: str

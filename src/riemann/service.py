@@ -12,6 +12,7 @@ from riemann.adapters.base import CommunityJsonAdapter, FixtureStatsAdapter, Sta
 from riemann.adapters.cdragon import fetch_live_cdragon_catalog, parse_cdragon_payloads
 from riemann.adapters.opgg import OpggStatsAdapter
 from riemann.config import Settings
+from riemann.gemini import GeminiClient, GeminiError
 from riemann.mechanics import (
     RelationGraph,
     compute_reference_prior_mean,
@@ -22,10 +23,12 @@ from riemann.mechanics import (
 )
 from riemann.models import (
     AdapterRunReport,
+    BuildExplanationResponse,
     CatalogBundle,
     CatalogStatusResponse,
     GameMode,
     HealthResponse,
+    MechanicsEnrichment,
     ModeCounts,
     Observation,
     PrecomputedPosterior,
@@ -97,6 +100,10 @@ class RiemannService:
         fail_cache_swap_once: bool = False,
     ) -> None:
         self.settings = settings
+        self.gemini = (
+            GeminiClient(settings.gemini_api_key, settings.gemini_model)
+            if settings.gemini_api_key else None
+        )
         self.store = SnapshotStore(settings.db_path)
         self.graph: RelationGraph = (
             graph if graph is not None else load_relation_graph(settings.graph_path)
@@ -154,6 +161,7 @@ class RiemannService:
             counts=counts,
             locales=["en_us", "pt_br"],
             adapters=list(snap.adapter_reports),
+            mechanics_enrichment=snap.mechanics_enrichment,
         )
 
     def _load_catalog(self, req: SyncRequest) -> CatalogBundle:
@@ -367,6 +375,7 @@ class RiemannService:
 
         snapshot_id = f"snap_{uuid.uuid4().hex[:12]}"
         translations = _build_translations(catalog)
+        enrichment = self._enrich_mechanics(catalog) if req.enrich_mechanics else None
         try:
             self.store.commit_snapshot(
                 snapshot_id=snapshot_id,
@@ -378,6 +387,7 @@ class RiemannService:
                 observations=all_valid_obs,
                 posteriors=posteriors,
                 adapter_reports=reports,
+                mechanics_enrichment=enrichment,
             )
         except Exception as exc:
             raise ServiceError(
@@ -409,7 +419,17 @@ class RiemannService:
             catalog_patch=catalog.catalog_patch,
             active_snapshot_preserved=False,
             adapters=reports,
+            mechanics_enrichment=enrichment,
         )
+
+    def _enrich_mechanics(self, catalog: CatalogBundle) -> MechanicsEnrichment:
+        if self.gemini is None:
+            return MechanicsEnrichment(status="unavailable")
+        try:
+            notes = self.gemini.enrich_mechanics(catalog)
+        except GeminiError:
+            return MechanicsEnrichment(status="error", model=self.gemini.model)
+        return MechanicsEnrichment(status="ok", model=self.gemini.model, notes=notes)
 
     def _require_snapshot(self) -> LoadedSnapshot:
         snap = self._active_snapshot
@@ -449,7 +469,11 @@ class RiemannService:
             )
 
     def recommend_items(self, req: RecommendItemsRequest) -> RecommendItemsResponse:
-        snap = self._require_snapshot()
+        return self._recommend_items(self._require_snapshot(), req)
+
+    def _recommend_items(
+        self, snap: LoadedSnapshot, req: RecommendItemsRequest
+    ) -> RecommendItemsResponse:
         with inference_no_outbound_context(enabled=self.settings.block_outbound_on_inference):
             return recommend_items(
                 snapshot=snap,
@@ -457,3 +481,34 @@ class RiemannService:
                 request=req,
                 hyperparams=self.settings.hyperparams,
             )
+
+    def explain_build(self, req: RecommendItemsRequest) -> BuildExplanationResponse:
+        if self.gemini is None:
+            raise ServiceError(503, "gemini_unavailable", "Set GEMINI_API_KEY to enable explanations")
+
+        snap = self._require_snapshot()
+        ranking = self._recommend_items(snap, req)
+        ranking = ranking.model_copy(update={"recommendations": ranking.recommendations[:5]})
+        locale: PublicLocale = "en_us" if req.locale == "auto" else req.locale
+        champion = snap.champions[(req.mode, req.champion_id)]
+        notes = snap.mechanics_enrichment.notes if snap.mechanics_enrichment else []
+        data = {
+            "catalog_patch": snap.catalog_patch,
+            "locale": locale,
+            "champion": champion.names.get(locale, champion.names["en_us"]),
+            "chosen_augments": [
+                snap.augments[(req.mode, augment_id)].names for augment_id in req.chosen_augments
+            ],
+            "current_items": [snap.items[(req.mode, item_id)].names for item_id in req.current_items],
+            "mechanics_notes": [
+                note.model_dump() for note in notes if note.augment_id in req.chosen_augments
+            ],
+            "ranking": ranking.model_dump(mode="json"),
+        }
+        try:
+            explanation = self.gemini.explain_build(data)
+        except GeminiError as exc:
+            raise ServiceError(502, "gemini_explanation_failed", "Gemini could not explain the build") from exc
+        return BuildExplanationResponse(
+            snapshot_id=snap.snapshot_id, model=self.gemini.model, explanation=explanation
+        )

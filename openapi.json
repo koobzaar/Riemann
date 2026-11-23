@@ -200,6 +200,65 @@
           }
         }
       }
+    },
+    "/v1/explain/build": {
+      "post": {
+        "summary": "Post Explain Build",
+        "description": "Generate a localized explanation of up to five ranked item recommendations.",
+        "operationId": "post_explain_build_v1_explain_build_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommendItemsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildExplanationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizedError"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizedError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizedError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -329,6 +388,33 @@
         },
         "type": "object",
         "title": "AugmentBreakdown"
+      },
+      "AugmentMechanicsNote": {
+        "properties": {
+          "augment_id": {
+            "type": "string",
+            "title": "Augment Id"
+          },
+          "source_quote": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Source Quote"
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "augment_id",
+          "source_quote",
+          "note"
+        ],
+        "title": "AugmentMechanicsNote"
       },
       "AugmentPhysicalMetrics": {
         "properties": {
@@ -516,6 +602,29 @@
         ],
         "title": "AugmentRecommendation"
       },
+      "BuildExplanationResponse": {
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "title": "Snapshot Id"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "snapshot_id",
+          "model",
+          "explanation"
+        ],
+        "title": "BuildExplanationResponse"
+      },
       "CatalogStatusResponse": {
         "properties": {
           "snapshot_id": {
@@ -585,6 +694,16 @@
             },
             "type": "array",
             "title": "Adapters"
+          },
+          "mechanics_enrichment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MechanicsEnrichment"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -979,6 +1098,42 @@
         ],
         "title": "ItemRecommendation"
       },
+      "MechanicsEnrichment": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "unavailable",
+              "error"
+            ],
+            "title": "Status"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/AugmentMechanicsNote"
+            },
+            "type": "array",
+            "title": "Notes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "MechanicsEnrichment"
+      },
       "ModeCounts": {
         "properties": {
           "augments": {
@@ -1009,6 +1164,46 @@
         },
         "type": "object",
         "title": "ModeCounts"
+      },
+      "NormalizedError": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          },
+          "field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Field"
+          },
+          "active_snapshot_preserved": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Snapshot Preserved"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "detail"
+        ],
+        "title": "NormalizedError"
       },
       "ReasonItem": {
         "properties": {
@@ -1483,6 +1678,11 @@
             "type": "string",
             "title": "Fixture Profile",
             "default": "default"
+          },
+          "enrich_mechanics": {
+            "type": "boolean",
+            "title": "Enrich Mechanics",
+            "default": false
           }
         },
         "type": "object",
@@ -1509,6 +1709,16 @@
             },
             "type": "array",
             "title": "Adapters"
+          },
+          "mechanics_enrichment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MechanicsEnrichment"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",

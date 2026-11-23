@@ -12,6 +12,7 @@ from riemann.models import (
     CatalogChampion,
     CatalogItem,
     GameMode,
+    MechanicsEnrichment,
     Observation,
     PrecomputedPosterior,
     PublicLocale,
@@ -91,6 +92,11 @@ CREATE TABLE IF NOT EXISTS adapter_runs (
     payload_json TEXT NOT NULL,
     PRIMARY KEY (snapshot_id, adapter_name)
 );
+
+CREATE TABLE IF NOT EXISTS mechanics_enrichments (
+    snapshot_id TEXT PRIMARY KEY REFERENCES snapshots(snapshot_id) ON DELETE CASCADE,
+    payload_json TEXT NOT NULL
+);
 """
 
 
@@ -108,6 +114,7 @@ class LoadedSnapshot:
     observations_count: dict[GameMode, int]
     posteriors: dict[tuple[GameMode, str, str, str, str], PrecomputedPosterior]
     adapter_reports: tuple[AdapterRunReport, ...]
+    mechanics_enrichment: MechanicsEnrichment | None = None
 
 
 class SnapshotStore:
@@ -149,6 +156,7 @@ class SnapshotStore:
         observations: list[Observation],
         posteriors: list[PrecomputedPosterior],
         adapter_reports: list[AdapterRunReport],
+        mechanics_enrichment: MechanicsEnrichment | None = None,
     ) -> None:
         """Atomically persist all snapshot tables and update durable active_snapshot pointer."""
         conn = self._connect()
@@ -259,6 +267,12 @@ class SnapshotStore:
                 [(snapshot_id, r.name, r.model_dump_json()) for r in adapter_reports],
             )
 
+            if mechanics_enrichment is not None:
+                conn.execute(
+                    "INSERT INTO mechanics_enrichments (snapshot_id, payload_json) VALUES (?, ?)",
+                    (snapshot_id, mechanics_enrichment.model_dump_json()),
+                )
+
             conn.execute(
                 """
                 INSERT INTO active_snapshot (singleton_id, snapshot_id)
@@ -346,6 +360,15 @@ class SnapshotStore:
             ):
                 adapter_reports.append(AdapterRunReport.model_validate_json(str(row["payload_json"])))
 
+            enrichment_row = conn.execute(
+                "SELECT payload_json FROM mechanics_enrichments WHERE snapshot_id = ?",
+                (snapshot_id,),
+            ).fetchone()
+            enrichment = (
+                MechanicsEnrichment.model_validate_json(enrichment_row["payload_json"])
+                if enrichment_row is not None else None
+            )
+
             return LoadedSnapshot(
                 snapshot_id=snapshot_id,
                 catalog_patch=str(srow["catalog_patch"]),
@@ -359,6 +382,7 @@ class SnapshotStore:
                 observations_count=obs_counts,
                 posteriors=posteriors,
                 adapter_reports=tuple(adapter_reports),
+                mechanics_enrichment=enrichment,
             )
         finally:
             conn.close()
