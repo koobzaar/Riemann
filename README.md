@@ -19,16 +19,32 @@
 
 ---
 
-## What Is Riemann?
+## What Riemann Solves
 
-Most League of Legends stat overlays rank augments and items using raw, unadjusted win rates — falling straight into small-sample noise (`2/2 = 100% WR`), cross-site baseline skew (e.g., Lolalytics ~51.8% vs OP.GG ~50%), sample double-counting across overlapping scrapers, and static recommendations blind to your live build.
+In **ARAM: Mayhem** and **Arena**, every augment choice rewrites your optimal build — and every item you already own changes which augment you should take next. Static tier lists and raw win rates fail the moment your build leaves the average case.
 
-**Riemann** separates exact game mechanics from statistical estimation:
+Riemann answers two live questions in **< 50 ms**:
 
-- **Source-Centered Exact Binomial + Two-Scale Normal Mixture Posterior** — Integrates discounted, mechanically-compatible patches via convergent adaptive 3-panel Simpson quadrature ($O(h^4)$). Crushes `2/2` noise traps harder than fixed Beta shrinkage while preserving genuine heavy-tailed "Exodia" synergies (`130/200`).
+> **1. What is the optimal card to pick right now?**  
+> Given your champion, the augments you already hold, and your current inventory, Riemann predicts the **dynamic marginal impact** of each offered card — not its blind average win rate.
+>
+> **2. What is the optimal build for the cards that I have?**  
+> Given your active augments and current items, Riemann ranks the highest-impact items to buy next — accounting for cooldown leverage, stat caps, and stateful augment lock-ins.
+
+### Real Match Scenarios Riemann Handles Dynamically
+
+- **Conditional Synergy vs. Overcap:** You already picked **+50% Crit** (*It's Critical*). Does your champion gain more from a crit-scaling card (*Jeweled Gauntlet*, *Vulnerability*) or an on-hit pivot (*Ethereal Weapon*) — and if you're already at `100%` crit, should you penalize wasted crit (or convert it on Senna / Yasuo / Yone)?
+- **Weapon of Destiny Lock-In:** Before buying your 1st Legendary, Riemann boosts high-scaling rush items that spiral with takedowns. Once your 1st Legendary is locked (even after upgrading, e.g., *Winter's Approach* $\to$ *Fimbulwinter*), it flips immediately to follow-up items that amplify the locked item (*Overlord's Bloodmail*, *Titanic Hydra*, *Unending Despair*).
+- **Apex Inventor (+100 Item Haste):** Computes exact reduced item cooldowns $C(H) = \frac{C_0}{1 + H/100}$ and elevated activation rates to surface cooldown-bound power spikes (*Heartsteel*, *Unending Despair*, *Eclipse*, *Lich Bane*, *Zhonya's*, *Redemption*).
+- **Noise & Bias Defense:** Stops `2/2 = 100% WR` small-sample traps, prevents cross-site baseline skew (e.g., Lolalytics ~51.8% vs OP.GG ~50%) and overlapping-source double-counting, and reports honest **two-tier robustness** (`is_bias_robust_on_means` and `is_envelope_separated`) when a choice is genuinely too close to call.
+
+---
+
+## How It Works
+
+- **Source-Centered Exact Binomial + Two-Scale Normal Mixture Posterior** — Integrates discounted, mechanically-compatible patches via convergent adaptive 3-panel Simpson quadrature ($O(h^4)$). Shrinks `2/2` traps harder than fixed Beta shrinkage while preserving heavy-tailed "Exodia" synergies (`130/200`).
 - **Zero Double-Counting Across Overlapping Sources** — Selects a single primary cohort across unverified global scrapers and routes secondary overlapping feeds to same-patch corroboration and disagreement tracking.
-- **Exact Physical Mechanics + Reference-Subtracted Transport** — Computes real item cooldowns $C(H) = \frac{C_0}{1 + H/100}$ (*Apex Inventor*), incremental usable vs. wasted crit + exact converter stat output (Senna/Yasuo/Yone/augments), and stateful *Weapon of Destiny* first-Legendary binding & item-transform tracking (`Winter's Approach` $\to$ `Fimbulwinter`).
-- **Honest Two-Tier Uncertainty Reporting** — Exposes posterior association intervals, bias-sensitivity envelopes, `is_bias_robust_on_means`, and `is_envelope_separated` instead of faking causal certainty from marginal website aggregates.
+- **Exact Physical Mechanics + Reference-Subtracted Transport** — Evaluates exact item cooldowns, usable vs. wasted crit, converter outputs, and *Weapon of Destiny* lock-in state without double-counting baseline mechanical strength.
 - **Bilingual OCR Resolver (`en_us` / `pt_br`)** — Deterministic normalization + `rapidfuzz` confidence & margin thresholds to reject ambiguous or noisy screen captures cleanly.
 - **Zero Outbound Network Calls on Inference** — All catalogs, relation graphs, and posteriors are precomputed into atomic SQLite snapshots and served from memory in `< 50 ms` p95.
 
